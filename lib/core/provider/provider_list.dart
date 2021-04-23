@@ -15,9 +15,6 @@ class ApplicationProvider {
 
   List<SingleChildWidget> singleItems = [];
   List<SingleChildWidget> dependItems = [
-    ChangeNotifierProvider(
-      create: (context) => LanguageProvider(),
-    ),
     Provider.value(value: NavigationService.instance)
   ];
   List<SingleChildWidget> uiChangesItems = [];
