@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       size: context.width * 5.4,
                     ),
                     SizedBox(width: context.width * 1.2),
-                    TextField(decoration: TextFormDeco().pinDeco(context),)
+                    //TextField(decoration: TextFormDeco().pinDeco(context),)
                   ],
                 ),
               )
