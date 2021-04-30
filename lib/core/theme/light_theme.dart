@@ -14,11 +14,11 @@ final ThemeData lightTheme = ThemeData(
     900: Color(0xff2f1704)
   }),
   brightness: Brightness.light,
-  primaryColor: Color(0xffee791a),
+  primaryColor: Color(0xffff3636),
   primaryColorBrightness: Brightness.dark,
   primaryColorLight: Color(0xfffbe3d0),
   primaryColorDark: Color(0xff8e460b),
-  accentColor: Color(0xffed7412),
+  accentColor: Color(0xff336088),
   accentColorBrightness: Brightness.dark,
   canvasColor: Color(0xfffafafa),
   scaffoldBackgroundColor: Color(0xfffafafa),

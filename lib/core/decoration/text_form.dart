@@ -38,4 +38,30 @@ class TextFormDeco {
       color: context.primary.withOpacity(.6),
     );
   }
+
+  // InputDecoration searchDeco(BuildContext context) {
+  //   return InputDecoration(
+  //     contentPadding: EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
+  //     prefix: Container(
+  //       //margin: EdgeInsets.all(10),
+  //       child: Icon(Icons.search,size: 30,),
+  //     ),
+  //     border: OutlineInputBorder(
+  //       borderSide: context.defaultBlack,
+  //       borderRadius: context.mediumCircular,
+  //     ),
+  //     focusedBorder: OutlineInputBorder(
+  //       borderRadius: BorderRadius.all(
+  //         Radius.circular(16),
+  //       ),
+  //       borderSide: BorderSide(color: Colors.black.withAlpha(99), width: 2.0),
+  //     ),
+  //     enabledBorder: OutlineInputBorder(
+  //       borderRadius: BorderRadius.all(
+  //         Radius.circular(32),
+  //       ),
+  //       borderSide: BorderSide(color: Colors.black.withAlpha(99), width: 2.0),
+  //     ),
+  //   );
+  // }
 }
