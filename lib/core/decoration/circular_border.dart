@@ -8,4 +8,30 @@ class CircularBorder {
       borderRadius: BorderRadius.circular(16),
     );
   }
+
+  BoxDecoration appBar(BuildContext context) {
+    return BoxDecoration(
+      borderRadius: BorderRadius.only(
+        bottomRight: Radius.circular(32),
+        bottomLeft: Radius.circular(32),
+      ),
+      gradient: LinearGradient(
+        begin: Alignment(1, -1),
+        end: Alignment(1, 1),
+        colors: [
+          Colors.black87,
+          context.primary,
+        ],
+      ),
+    );
+  }
+
+  RoundedRectangleBorder appBarRounded(BuildContext) {
+    return RoundedRectangleBorder(
+      borderRadius: BorderRadius.only(
+        bottomRight: Radius.circular(32),
+        bottomLeft: Radius.circular(32),
+      ),
+    );
+  }
 }

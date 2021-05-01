@@ -23,11 +23,20 @@ class TextFormDeco {
     );
   }
 
-  InputDecoration pinFormDeco() {
+  InputDecoration borderlessInput() {
     return InputDecoration(
-      counter: Offstage(),
-      enabledBorder: InputBorder.none,
+      border: InputBorder.none,
       focusedBorder: InputBorder.none,
+      enabledBorder: InputBorder.none,
+      errorBorder: InputBorder.none,
+      disabledBorder: InputBorder.none,
+    );
+  }
+
+  BoxDecoration inputFilledContainer() {
+    return BoxDecoration(
+      color: Colors.black12,
+      borderRadius: BorderRadius.circular(16),
     );
   }
 

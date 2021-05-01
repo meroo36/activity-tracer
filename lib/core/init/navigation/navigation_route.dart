@@ -1,6 +1,5 @@
-import 'package:activityTracer/views/home/login.dart';
+import 'package:activityTracer/views/login/login.dart';
 import 'package:flutter/material.dart';
-
 
 class NavigationRoute {
   static final NavigationRoute _instance = NavigationRoute._init();
@@ -14,7 +13,7 @@ class NavigationRoute {
       //   return normalNavigate(LoginScreen());
       default:
         return MaterialPageRoute(
-          builder: (context) => LoginPage(),
+          builder: (context) => LoginScreen(),
         );
     }
   }
