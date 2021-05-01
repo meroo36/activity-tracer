@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../core_shelf.dart';
 
 class CircularBorder {
   BoxDecoration inputBorder(BuildContext context) {
