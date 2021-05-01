@@ -2,7 +2,7 @@ import '../../core_shelf.dart';
 import 'package:dio/dio.dart';
 
 class UserApiService {
-  final String _endpoint = 'https://e28c51664e12.ngrok.io/api/user';
+  final String _endpoint = 'https://b4ce24826b05.ngrok.io/api/user';
 
   Future<String> login(String email, String password) async {
     try {

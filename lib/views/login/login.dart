@@ -103,7 +103,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                       height: 50,
                     ),
-                    LoginButton(),
+                    LoginButton(
+                      emailController: emailController,
+                      passwordController: passwordController,
+                    ),
                     SizedBox(
                       height: 10,
                     ),

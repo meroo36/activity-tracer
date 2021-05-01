@@ -1,3 +1,5 @@
+import 'package:activityTracer/core/constants/constants_shelf.dart';
+import 'package:activityTracer/views/home/home_screen.dart';
 import 'package:activityTracer/views/login/login.dart';
 import 'package:flutter/material.dart';
 
@@ -9,8 +11,8 @@ class NavigationRoute {
 
   Route<dynamic> generateRoute(RouteSettings args) {
     switch (args.name) {
-      // case NavigationConstants.login:
-      //   return normalNavigate(LoginScreen());
+      case NavigationConstants.home:
+        return normalNavigate(HomeScreen());
       default:
         return MaterialPageRoute(
           builder: (context) => LoginScreen(),
