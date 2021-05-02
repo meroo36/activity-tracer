@@ -1,5 +1,6 @@
-import '../../core_shelf.dart';
 import 'package:dio/dio.dart';
+
+import '../../core_shelf.dart';
 
 class UserApiService {
   final String _endpoint = 'https://b4ce24826b05.ngrok.io/api/user';
