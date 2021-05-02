@@ -1,5 +1,3 @@
-import 'package:activityTracer/core/provider/user_list_provider.dart';
-import 'package:activityTracer/core/services/api/user.dart';
 import 'package:flutter/material.dart';
 import '../../../core/core_shelf.dart';
 

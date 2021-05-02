@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../core/decoration/circular_border.dart';
+
 import '../../../core/core_shelf.dart';
+import '../../../core/decoration/circular_border.dart';
 
 class SearchWidget extends StatelessWidget {
   const SearchWidget({

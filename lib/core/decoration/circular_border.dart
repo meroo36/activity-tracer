@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../core_shelf.dart';
+import '../../core/core_shelf.dart';
 
 class CircularBorder {
   BoxDecoration inputBorder(BuildContext context) {
@@ -26,7 +26,7 @@ class CircularBorder {
     );
   }
 
-  RoundedRectangleBorder appBarRounded(BuildContext) {
+  RoundedRectangleBorder appBarRounded(BuildContext context) {
     return RoundedRectangleBorder(
       borderRadius: BorderRadius.only(
         bottomRight: Radius.circular(32),

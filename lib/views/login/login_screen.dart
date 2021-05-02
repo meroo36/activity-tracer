@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import '../../core/core_shelf.dart';
 
 import '../../core/decoration/circular_border.dart';
 import 'components/login_button.dart';
-import 'package:flutter/services.dart';
 
-import '../../core/core_shelf.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -15,7 +14,7 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  String? _error_text = '';
+  //String? _error_text = '';
 
   @override
   Widget build(BuildContext context) {
