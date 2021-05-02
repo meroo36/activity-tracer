@@ -1,6 +1,7 @@
-import 'package:activityTracer/core/decoration/circular_border.dart';
-import 'package:activityTracer/views/login/components/login_button.dart';
 import 'package:flutter/material.dart';
+
+import '../../core/decoration/circular_border.dart';
+import 'components/login_button.dart';
 import 'package:flutter/services.dart';
 
 import '../../core/core_shelf.dart';

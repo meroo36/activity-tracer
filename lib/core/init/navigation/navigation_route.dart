@@ -1,6 +1,6 @@
 import 'package:activityTracer/core/constants/constants_shelf.dart';
 import 'package:activityTracer/views/home/home_screen.dart';
-import 'package:activityTracer/views/login/login.dart';
+import 'package:activityTracer/views/login/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class NavigationRoute {
