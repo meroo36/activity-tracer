@@ -21,7 +21,7 @@ dependencies:
     json_annotation: ^4.0.1
     build_runner: ^2.0.1
     dio: ^4.0.0
-
+    
 dev_dependencies:
     flutter_test:
         sdk: flutter
