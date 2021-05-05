@@ -21,6 +21,8 @@ dependencies:
     json_annotation: ^4.0.1
     build_runner: ^2.0.1
     dio: ^4.0.0
+    flutter_swiper: ^1.1.6
+    url_launcher: ^6.0.3
     
 dev_dependencies:
     flutter_test:
@@ -33,3 +35,4 @@ flutter:
     assets:
         - assets/
         - assets/logo/
+        - assets/jsonData/
