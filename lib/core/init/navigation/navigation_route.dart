@@ -15,10 +15,10 @@ class NavigationRoute {
   var localManager = LocaleManager.prefrencesInit();
   NavigationRoute._init();
 
-  Route<dynamic> generateRoute(RouteSettings args) {
+  Route<dynamic> generateRouteLoggedIn(RouteSettings args) {
     switch (args.name) {
       case NavigationConstants.home:
-        return normalNavigate(AnimatedSplashScreen());
+        return normalNavigate(HomeScreen());
       case NavigationConstants.register:
         return registerNavigate(RegisterScreen());
       case NavigationConstants.tips:
@@ -30,13 +30,17 @@ class NavigationRoute {
     }
   }
 
-  Route<dynamic> generateRoute2(RouteSettings args) {
+  Route<dynamic> generateRouteNotLoggedIn(RouteSettings args) {
     switch (args.name) {
       case NavigationConstants.home:
         return normalNavigate(HomeScreen());
+      case NavigationConstants.register:
+        return registerNavigate(RegisterScreen());
+      case NavigationConstants.tips:
+        return tipsNavigate(TipsScreen());
       default:
         return MaterialPageRoute(
-          builder: (context) => HomeScreen(),
+          builder: (context) => LoginScreen(),
         );
     }
   }

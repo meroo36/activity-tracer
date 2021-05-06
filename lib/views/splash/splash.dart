@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class AnimatedSplashScreen extends StatefulWidget {
   @override
-  SplashScreenState createState() => new SplashScreenState();
+  SplashScreenState createState() => SplashScreenState();
 }
 
 class SplashScreenState extends State<AnimatedSplashScreen>
@@ -15,28 +15,28 @@ class SplashScreenState extends State<AnimatedSplashScreen>
   late AnimationController animationController;
   late Animation<double> animation;
 
-  startTime() async {
-    var _duration = new Duration(seconds: 3);
-    return new Timer(_duration, navigationPage);
+  Future startTime() async {
+    var _duration = Duration(seconds: 3);
+    return Timer(_duration, navigationPage);
   }
 
   void navigationPage() {
     Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => LoginScreen(),
-              ));
+      context,
+      MaterialPageRoute(
+        builder: (context) => LoginScreen(),
+      ),
+    );
   }
 
   @override
   void initState() {
     super.initState();
-    animationController = new AnimationController(
-        vsync: this, duration: new Duration(seconds: 3));
+    animationController =
+        AnimationController(vsync: this, duration: Duration(seconds: 3));
     animation =
-        new CurvedAnimation(parent: animationController, curve: Curves.easeOut);
-
-    animation.addListener(() => this.setState(() {}));
+        CurvedAnimation(parent: animationController, curve: Curves.easeOut);
+    //animation.addListener(() => this.setState(() {}));
     animationController.forward();
 
     setState(() {
@@ -52,26 +52,25 @@ class SplashScreenState extends State<AnimatedSplashScreen>
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          new Column(
+          Column(
             mainAxisAlignment: MainAxisAlignment.end,
             mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-
-              Padding(padding: EdgeInsets.only(bottom: 30.0))
-
-
-          ],),
-          new Column(
+            children: <Widget>[Padding(padding: EdgeInsets.only(bottom: 30.0))],
+          ),
+          Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              new Image.asset(
+              Image.asset(
                 'assets/logo/calculate.jpg',
                 width: animation.value * 250,
                 height: animation.value * 250,
               ),
-              new Text(
+              Text(
                 'WELCOME',
-                style: TextStyle(color: Colors.white,fontWeight: FontWeight.w700,fontSize: 30),
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 30),
               ),
             ],
           ),
