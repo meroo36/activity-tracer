@@ -1,12 +1,19 @@
 import 'package:activityTracer/core/init/navigation/navigation_service.dart';
+import 'package:activityTracer/views/tipstricks/view/tips_tricks.dart';
 import 'package:flutter/material.dart';
 
 class TipsTricksScrollWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () =>
-          {NavigationService.instance.navigateToPageClear(path: '/tips')},
+      onTap: () => {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => TipsScreen(),
+          ),
+        ),
+      },
       child: calculateImg(context),
     );
   }

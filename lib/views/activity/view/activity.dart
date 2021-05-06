@@ -12,11 +12,11 @@ class ActivityScreen extends StatefulWidget {
 }
 
 class _ActivityScreenState extends State<ActivityScreen> {
-  String age = "";
+  String age = '';
 
-  String height = "";
+  String height = '';
 
-  String weight = "";
+  String weight = '';
 
   Gender? gender;
 
@@ -28,9 +28,9 @@ class _ActivityScreenState extends State<ActivityScreen> {
 
   void calori() {
     //işlemler
-    double weightInt = double.parse(weight);
-    double heightInt = double.parse(height);
-    double ageInt = double.parse(age);
+    var weightInt = double.parse(weight);
+    var heightInt = double.parse(height);
+    var ageInt = double.parse(age);
 
     if (gender == Gender.Male) {
       kalori = (665 + (9.6 * heightInt) + (1.7 * weightInt) - (4.7 * ageInt));
@@ -42,13 +42,12 @@ class _ActivityScreenState extends State<ActivityScreen> {
   }
 
   void vki() {
-    double weightDouble = double.parse(weight);
-    double heightDouble = double.parse(height);
+    var weightDouble = double.parse(weight);
+    var heightDouble = double.parse(height);
 
-    double heightMetre = heightDouble * heightDouble / 10000;
-    double bmi = weightDouble / heightMetre;
+    var heightMetre = heightDouble * heightDouble / 10000;
+    var bmi = weightDouble / heightMetre;
     this.bmi = bmi;
-    print('bmi: ' + bmi.toString());
   }
 
   @override
@@ -142,7 +141,6 @@ class _ActivityScreenState extends State<ActivityScreen> {
                     child: TextField(
                       decoration: TextFormDeco().borderlessInput(),
                       onChanged: (String age) {
-                        print("age:" + age);
                         this.age = age;
                       },
                     ),
@@ -200,14 +198,14 @@ class _ActivityScreenState extends State<ActivityScreen> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(isCalculated
-                        ? "Calori:" + kalori.toString().substring(0, 4)
-                        : ""),
+                        ? 'Calori: ${kalori.toString().substring(0, 4)}'
+                        : ''),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(isCalculated
-                        ? "BMI:" + bmi.toString().substring(0, 5)
-                        : ""),
+                        ? 'BMI: ${bmi.toString().substring(0, 5)}'
+                        : ''),
                   ),
                 ],
               ),

@@ -24,8 +24,6 @@ class NavigationRoute {
         return normalNavigate(HomeScreen());
       case NavigationConstants.register:
         return normalNavigate(RegisterScreen());
-      case NavigationConstants.tips:
-        return normalNavigate(TipsScreen());
       case NavigationConstants.activity:
         return normalNavigate(ActivityScreen());
       default:
@@ -41,8 +39,6 @@ class NavigationRoute {
         return normalNavigate(HomeScreen());
       case NavigationConstants.register:
         return normalNavigate(RegisterScreen());
-      case NavigationConstants.tips:
-        return normalNavigate(TipsScreen());
       case NavigationConstants.activity:
         return normalNavigate(ActivityScreen());
       default:
