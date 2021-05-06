@@ -6,7 +6,7 @@ class ImageBoxWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () =>
-          {NavigationService.instance.navigateToPageClear(path: '/tips')},
+          {NavigationService.instance.navigateToPageClear(path: '/activity')},
       child: calculateImg(context),
     );
   }
