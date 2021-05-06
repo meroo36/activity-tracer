@@ -25,7 +25,7 @@ class HomeEntryBody extends StatelessWidget {
           SizedBox(height: context.height * 2),
           Expanded(flex: 2, child: NewsScrollWidget()),
           SizedBox(height: context.height * 4),
-          Expanded(flex: 1, child: TipsTricksScrollWidget())
+          Expanded(flex: 1, child: TipsTricksScrollWidget()),
         ],
       ),
     );

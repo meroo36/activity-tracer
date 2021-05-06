@@ -1,20 +1,21 @@
+import 'package:activityTracer/core/decoration/circular_border.dart';
+import 'package:activityTracer/views/login/components/login_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 import '../../core/core_shelf.dart';
+import 'components/register_button.dart';
 
-import '../../core/decoration/circular_border.dart';
-import 'components/login_button.dart';
-
-
-class LoginScreen extends StatefulWidget {
+class RegisterScreen extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _RegisterScreenState createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  //String? _error_text = '';
+  String? _error_text = '';
 
   @override
   Widget build(BuildContext context) {
@@ -43,17 +44,20 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text('Welcome!'),
+                      Text('Register'),
                       Text(
-                        'we have been waiting for you.',
+                        'we are looking foward',
                         style: TextStyle(fontSize: 10),
+                      ),
+                      Text('to meet you..',
+                      style: TextStyle(fontSize: 10),
                       )
                     ],
                   ),
                 ),
               ),
               pinned: true,
-              expandedHeight: context.height * 40,
+              expandedHeight: context.height * 32,
               centerTitle: true,
               shape: CircularBorder().appBarRounded(context),
             ),
@@ -61,16 +65,16 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Container(
                 padding: EdgeInsets.all(30),
                 width: context.width * 50,
-                height: context.height * 60,
+                height: context.height * 50,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Container(
-                      child: Text('Username'),
+                      child: Text('Email'),
                     ),
                     SizedBox(
-                      height: 10,
+                      height: 5,
                     ),
                     Container(
                       padding: EdgeInsets.only(right: 20, left: 20),
@@ -81,13 +85,30 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 10,
+                    ),
+                    Container(
+                      child: Text('Username'),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(right: 20, left: 20),
+                      decoration: TextFormDeco().inputFilledContainer(),
+                      child: TextField(
+                        decoration: TextFormDeco().borderlessInput(),
+                        controller: emailController,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                     Container(
                       child: Text('Password'),
                     ),
                     SizedBox(
-                      height: 10,
+                      height: 5,
                     ),
                     Container(
                       padding: EdgeInsets.only(right: 20, left: 20),
@@ -101,29 +122,48 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     SizedBox(
-                      height: 30,
+                      height: 10,
                     ),
-                    LoginButton(
-                      emailController: emailController,
-                      passwordController: passwordController,
+                    Container(
+                      child: Text('Confirm Password'),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(right: 20, left: 20),
+                      decoration: TextFormDeco().inputFilledContainer(),
+                      child: TextField(
+                        decoration: TextFormDeco().borderlessInput(),
+                        controller: emailController,
+                      ),
                     ),
                     SizedBox(
                       height: 15,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('Don\'t have an account?'),
-                        GestureDetector(
-                          onTap: () =>
-                          {NavigationService.instance.navigateToPageClear(path: '/register')},
-                          child: Text(
-                            'Lets sign-up!',
-                            style: TextStyle(color: context.primary),
-                          ),
-                        ),
-                      ],
+                    RegisterButton(
+                        emailController: emailController,
+                        passwordController: passwordController,
+                      ),
+                    
+                    SizedBox(
+                      height: 7,
                     ),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('Already have an account?'),
+                          GestureDetector(
+                            onTap: () =>
+                            {NavigationService.instance.navigateToPageClear(path: '/login')},
+                            child: Text(
+                              'Log in!',
+                              style: TextStyle(color: context.primary),
+                            ),
+                          ),
+                        ],
+                      ),
+                    
                   ],
                 ),
               ),

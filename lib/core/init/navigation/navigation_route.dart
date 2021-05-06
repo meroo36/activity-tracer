@@ -1,6 +1,9 @@
 import 'package:activityTracer/core/core_shelf.dart';
+import 'package:activityTracer/views/tipstricks/view/tips_tricks.dart';
+import 'package:activityTracer/views/splash/splash.dart';
+
+import '../../../views/register/register.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../views/home/home_screen.dart';
 import '../../../views/login/login_screen.dart';
@@ -15,7 +18,11 @@ class NavigationRoute {
   Route<dynamic> generateRoute(RouteSettings args) {
     switch (args.name) {
       case NavigationConstants.home:
-        return normalNavigate(HomeScreen());
+        return normalNavigate(AnimatedSplashScreen());
+      case NavigationConstants.register:
+        return registerNavigate(RegisterScreen());
+      case NavigationConstants.tips:
+        return tipsNavigate(TipsScreen());
       default:
         return MaterialPageRoute(
           builder: (context) => HomeScreen(),
@@ -29,12 +36,24 @@ class NavigationRoute {
         return normalNavigate(HomeScreen());
       default:
         return MaterialPageRoute(
-          builder: (context) => LoginScreen(),
+          builder: (context) => HomeScreen(),
         );
     }
   }
 
   MaterialPageRoute normalNavigate(Widget widget) {
+    return MaterialPageRoute(
+      builder: (context) => widget,
+    );
+  }
+
+  MaterialPageRoute registerNavigate(Widget widget) {
+    return MaterialPageRoute(
+      builder: (context) => widget,
+    );
+  }
+
+  MaterialPageRoute tipsNavigate(Widget widget) {
     return MaterialPageRoute(
       builder: (context) => widget,
     );

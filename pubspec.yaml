@@ -26,6 +26,9 @@ dependencies:
     pedometer: ^3.0.0
     workmanager: ^0.4.0
 
+    flutter_swiper: ^1.1.6
+    url_launcher: ^6.0.3
+    
 dev_dependencies:
     flutter_test:
         sdk: flutter
@@ -37,3 +40,4 @@ flutter:
     assets:
         - assets/
         - assets/logo/
+        - assets/jsonData/
