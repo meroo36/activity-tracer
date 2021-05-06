@@ -1,3 +1,4 @@
+import 'package:activityTracer/core/provider/activity_data.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
@@ -17,5 +18,7 @@ class ApplicationProvider {
   List<SingleChildWidget> dependItems = [
     Provider.value(value: NavigationService.instance)
   ];
-  List<SingleChildWidget> uiChangesItems = [];
+  List<SingleChildWidget> uiChangesItems = [
+    ListenableProvider(create: (_) => ActivityDataModel(1))
+  ];
 }

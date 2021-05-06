@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import '../../core/core_shelf.dart';
+import '../profile/profile_screen.dart';
 import '../widgets/bottom_navigation_bar/bottom_navigation_bar.dart';
 import 'home_entry_body.dart';
 
@@ -24,7 +26,10 @@ class _HomeScreenState extends State<HomeScreen> {
             pageIndex == 1 ? Icons.notifications : Icons.notifications_outlined,
             1,
           ),
-          getIcon(pageIndex == 2 ? Icons.person : Icons.person_outline, 2),
+          getIcon(
+              pageIndex == 2 ? Icons.leaderboard : Icons.leaderboard_outlined,
+              2),
+          getIcon(pageIndex == 3 ? Icons.person : Icons.person_outline, 3),
         ],
         onTap: changeIndex,
       ),
@@ -47,6 +52,10 @@ class _HomeScreenState extends State<HomeScreen> {
     } else if (pageIndex == 1) {
       return Center(
         child: Text('test'),
+      );
+    } else if (pageIndex == 3) {
+      return Center(
+        child: ProfileScreen(),
       );
     } else {
       return Center(

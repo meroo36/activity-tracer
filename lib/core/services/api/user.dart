@@ -3,27 +3,27 @@ import 'package:dio/dio.dart';
 import '../../core_shelf.dart';
 
 class UserApiService {
-  final String _endpoint = 'https://b4ce24826b05.ngrok.io/api/user';
+  final String _endpoint = 'http://192.168.1.33:3000/api/user';
 
-  Future<String> login(String email, String password) async {
+  Future login(String email, String password) async {
     try {
       var body = {'email': email, 'password': password};
       var response = await Dio().post('$_endpoint/login', data: body);
-      print(response);
       await LocaleManager.instance.setStringValue(
           PreferencesKeys.ACCESS_TOKEN, response.data['accessToken']);
       return response.data;
     } on DioError catch (error, stacktrace) {
       print('Exception occured: $error stackTrace: $stacktrace');
-      return error.toString();
+      throw error.toString();
     }
   }
 
-  Future<UserModel> test(String email, String password) async {
+  Future<UserModel> getUser() async {
     try {
-      var body = {'email': email, 'password': password};
-      var response = await Dio().post('$_endpoint/login', data: body);
-      print(response);
+      var token =
+          LocaleManager.instance.getStringValue(PreferencesKeys.ACCESS_TOKEN);
+      var response = await Dio().get('$_endpoint/getUser',
+          options: Options(headers: {'Authorization': 'Bearer $token'}));
       return UserModel.fromJson(response.data['user']);
     } on DioError catch (error, stacktrace) {
       print('Exception occured: $error stackTrace: $stacktrace');

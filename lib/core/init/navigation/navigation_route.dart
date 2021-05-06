@@ -1,4 +1,6 @@
+import 'package:activityTracer/core/core_shelf.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../views/home/home_screen.dart';
 import '../../../views/login/login_screen.dart';
@@ -7,7 +9,7 @@ import '../../constants/constants_shelf.dart';
 class NavigationRoute {
   static final NavigationRoute _instance = NavigationRoute._init();
   static NavigationRoute get instance => _instance;
-
+  var localManager = LocaleManager.prefrencesInit();
   NavigationRoute._init();
 
   Route<dynamic> generateRoute(RouteSettings args) {
@@ -15,7 +17,17 @@ class NavigationRoute {
       case NavigationConstants.home:
         return normalNavigate(HomeScreen());
       default:
-        print(args.name);
+        return MaterialPageRoute(
+          builder: (context) => HomeScreen(),
+        );
+    }
+  }
+
+  Route<dynamic> generateRoute2(RouteSettings args) {
+    switch (args.name) {
+      case NavigationConstants.home:
+        return normalNavigate(HomeScreen());
+      default:
         return MaterialPageRoute(
           builder: (context) => LoginScreen(),
         );

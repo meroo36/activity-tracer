@@ -5,13 +5,17 @@ part 'user_model.g.dart';
 @JsonSerializable()
 class UserModel {
   late String? id;
-  late String fullName;
-  late String userTag;
-  late String? phoneNumber;
+  late String fullname;
+  late String imageUrl;
   late String email;
   late String? error;
 
-  UserModel(this.id, this.fullName, this.userTag, this.phoneNumber, this.email);
+  UserModel(
+    this.id,
+    this.fullname,
+    this.imageUrl,
+    this.email,
+  );
   factory UserModel.fromJson(Map<String, dynamic> json) =>
       _$UserModelFromJson(json);
   Map<String, dynamic> toJson() => _$UserModelToJson(this);

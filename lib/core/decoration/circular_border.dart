@@ -34,4 +34,14 @@ class CircularBorder {
       ),
     );
   }
+
+  BoxDecoration profilePhoto(BuildContext context, String imageUrl) {
+    return BoxDecoration(
+      image: DecorationImage(
+        image: NetworkImage(imageUrl),
+      ),
+      shape: BoxShape.circle,
+      border: Border.all(width: 2, color: Colors.black, style: BorderStyle.solid),
+    );
+  }
 }

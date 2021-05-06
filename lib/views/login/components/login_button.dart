@@ -1,3 +1,4 @@
+import 'package:activityTracer/core/services/api/user.dart';
 import 'package:flutter/material.dart';
 import '../../../core/core_shelf.dart';
 
@@ -24,13 +25,18 @@ class LoginButton extends StatelessWidget {
           ),
         ),
       ),
-      onPressed: () =>
-          {NavigationService.instance.navigateToPageClear(path: '/home')},
-      // onPressed: () => UserApiService()
-      //     .login(emailController.text, passwordController.text)
-      //     .then((value) {
-      //   print(value.toString());
-      // }).catchError((onError) {}),
+      onPressed: () async {
+        //print(LocaleManager.instance.getStringValue(PreferencesKeys.ACCESS_TOKEN));
+        var user = await UserApiService()
+            .login(emailController.text, passwordController.text);
+        if (user != null) {
+          await LocaleManager.instance.setStringValue(
+              PreferencesKeys.ACCESS_TOKEN, user['accessToken']);
+          return NavigationService.instance.navigateToPageClear(path: '/home');
+        } else {
+          //show error
+        }
+      },
       child: Container(
         height: 46,
         width: double.infinity,

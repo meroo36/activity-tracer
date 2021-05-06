@@ -61,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Container(
                 padding: EdgeInsets.all(30),
                 width: context.width * 50,
-                height: context.height * 50,
+                height: context.height * 60,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -108,7 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       passwordController: passwordController,
                     ),
                     SizedBox(
-                      height: 10,
+                      height: 20,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

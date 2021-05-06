@@ -21,6 +21,10 @@ dependencies:
     json_annotation: ^4.0.1
     build_runner: ^2.0.1
     dio: ^4.0.0
+    cached_network_image: ^3.0.0
+    fl_chart: ^0.36.0
+    pedometer: ^3.0.0
+    workmanager: ^0.4.0
 
 dev_dependencies:
     flutter_test:
