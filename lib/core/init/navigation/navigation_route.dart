@@ -1,14 +1,14 @@
+import 'package:flutter/material.dart';
+
 import 'package:activityTracer/core/core_shelf.dart';
+import 'package:activityTracer/views/login/login_screen.dart';
 import 'package:activityTracer/views/tipstricks/view/tips_tricks.dart';
-import 'package:activityTracer/views/splash/splash.dart';
 
 import '../../../views/register/register.dart';
-import 'package:flutter/material.dart';
 
 import '../../../views/activity/view/activity.dart';
 import '../../../views/home/home_screen.dart';
 import '../../../views/register/register.dart';
-import '../../../views/splash/splash.dart';
 import '../../../views/tipstricks/view/tips_tricks.dart';
 import '../../constants/constants_shelf.dart';
 
@@ -30,7 +30,7 @@ class NavigationRoute {
         return normalNavigate(ActivityScreen());
       default:
         return MaterialPageRoute(
-          builder: (context) => AnimatedSplashScreen(),
+          builder: (context) => HomeScreen(),
         );
     }
   }
@@ -40,9 +40,11 @@ class NavigationRoute {
       case NavigationConstants.home:
         return normalNavigate(HomeScreen());
       case NavigationConstants.register:
-        return registerNavigate(RegisterScreen());
+        return normalNavigate(RegisterScreen());
       case NavigationConstants.tips:
-        return tipsNavigate(TipsScreen());
+        return normalNavigate(TipsScreen());
+      case NavigationConstants.activity:
+        return normalNavigate(ActivityScreen());
       default:
         return MaterialPageRoute(
           builder: (context) => LoginScreen(),
