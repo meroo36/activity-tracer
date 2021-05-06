@@ -49,8 +49,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         'we are looking foward',
                         style: TextStyle(fontSize: 10),
                       ),
-                      Text('to meet you..',
-                      style: TextStyle(fontSize: 10),
+                      Text(
+                        'to meet you..',
+                        style: TextStyle(fontSize: 10),
                       )
                     ],
                   ),
@@ -65,7 +66,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
               child: Container(
                 padding: EdgeInsets.all(30),
                 width: context.width * 50,
-                height: context.height * 50,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -142,28 +142,28 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       height: 15,
                     ),
                     RegisterButton(
-                        emailController: emailController,
-                        passwordController: passwordController,
-                      ),
-                    
+                      emailController: emailController,
+                      passwordController: passwordController,
+                    ),
                     SizedBox(
                       height: 7,
                     ),
                     Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('Already have an account?'),
-                          GestureDetector(
-                            onTap: () =>
-                            {NavigationService.instance.navigateToPageClear(path: '/login')},
-                            child: Text(
-                              'Log in!',
-                              style: TextStyle(color: context.primary),
-                            ),
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('Already have an account?'),
+                        GestureDetector(
+                          onTap: () => {
+                            NavigationService.instance
+                                .navigateToPageClear(path: '/login')
+                          },
+                          child: Text(
+                            'Log in!',
+                            style: TextStyle(color: context.primary),
                           ),
-                        ],
-                      ),
-                    
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),

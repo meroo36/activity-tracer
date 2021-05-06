@@ -23,6 +23,7 @@ dependencies:
     dio: ^4.0.0
     flutter_swiper: ^1.1.6
     url_launcher: ^6.0.3
+    gender_picker: ^1.1.0
     
 dev_dependencies:
     flutter_test:

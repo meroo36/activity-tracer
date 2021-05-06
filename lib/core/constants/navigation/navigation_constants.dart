@@ -4,4 +4,5 @@ class NavigationConstants {
   static const register = '/register';
   static const profile = '/profile';
   static const tips = '/tips';
+  static const activity = '/activity';
 }

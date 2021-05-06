@@ -1,11 +1,10 @@
-import 'package:activityTracer/views/tipstricks/view/tips_tricks.dart';
-import 'package:activityTracer/views/splash/splash.dart';
-
-import '../../../views/register/register.dart';
 import 'package:flutter/material.dart';
 
+import '../../../views/activity/view/activity.dart';
 import '../../../views/home/home_screen.dart';
-import '../../../views/login/login_screen.dart';
+import '../../../views/register/register.dart';
+import '../../../views/splash/splash.dart';
+import '../../../views/tipstricks/view/tips_tricks.dart';
 import '../../constants/constants_shelf.dart';
 
 class NavigationRoute {
@@ -17,32 +16,22 @@ class NavigationRoute {
   Route<dynamic> generateRoute(RouteSettings args) {
     switch (args.name) {
       case NavigationConstants.home:
-        return normalNavigate(AnimatedSplashScreen());
+        return normalNavigate(HomeScreen());
       case NavigationConstants.register:
-        return registerNavigate(RegisterScreen());
+        return normalNavigate(RegisterScreen());
       case NavigationConstants.tips:
-        return tipsNavigate(TipsScreen());
+        return normalNavigate(TipsScreen());
+      case NavigationConstants.activity:
+        return normalNavigate(ActivityScreen());
       default:
         print(args.name);
         return MaterialPageRoute(
-          builder: (context) => HomeScreen(),
+          builder: (context) => AnimatedSplashScreen(),
         );
     }
   }
 
   MaterialPageRoute normalNavigate(Widget widget) {
-    return MaterialPageRoute(
-      builder: (context) => widget,
-    );
-  }
-
-  MaterialPageRoute registerNavigate(Widget widget) {
-    return MaterialPageRoute(
-      builder: (context) => widget,
-    );
-  }
-
-  MaterialPageRoute tipsNavigate(Widget widget) {
     return MaterialPageRoute(
       builder: (context) => widget,
     );
