@@ -12,7 +12,7 @@ class _UserChartState extends State<UserChart> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.fromLTRB(0, 10, 20, 0),
-      height: 200,
+      height: context.height * 30,
       width: double.infinity,
       child: LineChart(
         LineChartData(

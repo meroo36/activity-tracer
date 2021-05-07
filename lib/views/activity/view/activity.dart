@@ -53,10 +53,10 @@ class _ActivityScreenState extends State<ActivityScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: CustomScrollView(
-            physics: BouncingScrollPhysics(),
-            scrollDirection: Axis.vertical,
-            slivers: [
+      body: CustomScrollView(
+        physics: BouncingScrollPhysics(),
+        scrollDirection: Axis.vertical,
+        slivers: [
           SliverAppBar(
             backgroundColor: context.primary,
             flexibleSpace: FlexibleSpaceBar(
@@ -211,6 +211,8 @@ class _ActivityScreenState extends State<ActivityScreen> {
               ),
             ),
           ),
-        ]));
+        ],
+      ),
+    );
   }
 }

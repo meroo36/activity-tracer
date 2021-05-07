@@ -1,4 +1,6 @@
+import 'package:activityTracer/core/init/helpers/background_worker.dart';
 import 'package:activityTracer/core/init/helpers/step_counter.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -8,10 +10,17 @@ import 'package:workmanager/workmanager.dart';
 import 'core/core_shelf.dart';
 import 'core/provider/provider_list.dart';
 
-void callbackDispatcher() {
-  Workmanager().executeTask((task, inputData) {
-    print(
-        'Native called background task: $task'); //simpleTask will be emitted here.
+void callbackDispatcher() async {
+  Workmanager().executeTask((task, inputData) async {
+    print('Native called background task: $task');
+
+    switch (task) {
+      case 'simpleTask':
+        print('gönderdim');
+        await BackgroundWorker().sendStepsToApi();
+        break;
+      default:
+    }
     return Future.value(true);
   });
 }
@@ -24,22 +33,26 @@ void main() async {
     ),
   );
   WidgetsFlutterBinding.ensureInitialized();
-  await Workmanager().initialize(callbackDispatcher);
+  var prefs = await SharedPreferences.getInstance();
+  var token = prefs.getString(PreferencesKeys.ACCESS_TOKEN.toString());
+  await Workmanager().initialize(callbackDispatcher, isInDebugMode: true);
   await Workmanager().registerPeriodicTask(
     '1',
     'simpleTask',
     frequency: Duration(minutes: 15),
+    initialDelay: Duration(seconds: 30),
   );
 
-  var prefs = await SharedPreferences.getInstance();
-  var token = prefs.getString(PreferencesKeys.ACCESS_TOKEN.toString());
   runApp(
     MultiProvider(
       providers: [
         ...?ApplicationProvider.instance?.dependItems,
         ...?ApplicationProvider.instance?.uiChangesItems
       ],
-      child: MyApp(token),
+      child: DevicePreview(
+        enabled: true,
+        builder: (context) => MyApp(token),
+      ),
     ),
   );
 }
@@ -53,6 +66,8 @@ class MyApp extends StatelessWidget {
     print(token);
     if (token != null) {
       return MaterialApp(
+        locale: DevicePreview.locale(context),
+        builder: DevicePreview.appBuilder,
         title: 'Activity Tracer',
         debugShowCheckedModeBanner: false,
         theme: getLightTheme(),
@@ -61,6 +76,8 @@ class MyApp extends StatelessWidget {
       );
     } else {
       return MaterialApp(
+        locale: DevicePreview.locale(context),
+        builder: DevicePreview.appBuilder,
         title: 'Activity Tracer',
         debugShowCheckedModeBanner: false,
         theme: getLightTheme(),

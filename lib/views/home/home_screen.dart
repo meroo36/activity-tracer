@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
         onTap: changeIndex,
       ),
-      body: SafeArea(child: getBody()),
+      body: getBody(),
     );
   }
 

@@ -15,8 +15,8 @@ class ProfilePhotoWidget extends StatelessWidget {
         child: CachedNetworkImage(
           imageUrl: imageUrl,
           imageBuilder: (context, imageProvider) => Container(
-            width: 150,
-            height: 150,
+            width: context.height * 20,
+            height: context.height * 20,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               boxShadow: [

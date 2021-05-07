@@ -44,15 +44,17 @@ class ProfileWrapper extends StatelessWidget {
             padding: context.mediumPadding,
             child: Align(
               alignment: Alignment(-2, -0.75),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Weekly Steps'),
-                  UserChart(),
-                  Text('Achievements'),
-                  Expanded(
-                    child: Container(
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Weekly Steps'),
+                    UserChart(),
+                    Text('Achievements'),
+                    Container(
+                      height: context.height * 20,
+                      width: double.infinity,
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         physics: BouncingScrollPhysics(),
@@ -85,8 +87,8 @@ class ProfileWrapper extends StatelessWidget {
                         ],
                       ),
                     ),
-                  )
-                ],
+                  ],
+                ),
               ),
             ),
           ),

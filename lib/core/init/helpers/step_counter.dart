@@ -1,6 +1,9 @@
+import 'dart:convert';
+
 import 'package:activityTracer/core/core_shelf.dart';
 import 'package:activityTracer/core/provider/activity_data.dart';
 import 'package:pedometer/pedometer.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class StepCounter {
   late Stream<StepCount> _stepCountStream;
@@ -10,11 +13,18 @@ class StepCounter {
 
   StepCounter(this.context);
 
-  void onStepCount(StepCount event) {
+  void onStepCount(StepCount event) async {
     var activityData = Provider.of<ActivityDataModel>(context, listen: false);
-    print(activityData.step);
     _steps = event.steps.toString();
+    print(event.steps);
     activityData.step = int.parse(_steps);
+    var stepObj = {
+      'steps': event.steps,
+      'date': event.timeStamp.toIso8601String(),
+    };
+    var prefs = await SharedPreferences.getInstance();
+    await prefs.setString('steps', jsonEncode(stepObj));
+    //print(jsonDecode(prefs.getString('steps')!));
   }
 
   void onPedestrianStatusChanged(PedestrianStatus event) {
@@ -31,7 +41,7 @@ class StepCounter {
     _steps = 'Step Count not available';
   }
 
-  void initPlatformState() {
+  void initPlatformState() async {
     print('step counter initialized');
     _pedestrianStatusStream = Pedometer.pedestrianStatusStream;
     _pedestrianStatusStream

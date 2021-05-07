@@ -19,158 +19,156 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: CustomScrollView(
-          physics: BouncingScrollPhysics(),
-          scrollDirection: Axis.vertical,
-          slivers: [
-            SliverAppBar(
-              backgroundColor: context.primary,
-              flexibleSpace: FlexibleSpaceBar(
-                collapseMode: CollapseMode.pin,
-                background: Center(
-                  child: Text(
-                    'LOGO',
-                    style: TextStyle(fontSize: 50),
-                  ),
-                ),
-                centerTitle: true,
-                title: Container(
-                  decoration: CircularBorder().appBar(context),
-                  width: double.infinity,
-                  height: double.infinity,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text('Register'),
-                      Text(
-                        'we are looking foward',
-                        style: TextStyle(fontSize: 10),
-                      ),
-                      Text(
-                        'to meet you..',
-                        style: TextStyle(fontSize: 10),
-                      )
-                    ],
-                  ),
+    return Scaffold(
+      body: CustomScrollView(
+        physics: BouncingScrollPhysics(),
+        scrollDirection: Axis.vertical,
+        slivers: [
+          SliverAppBar(
+            backgroundColor: context.primary,
+            flexibleSpace: FlexibleSpaceBar(
+              collapseMode: CollapseMode.pin,
+              background: Center(
+                child: Text(
+                  'LOGO',
+                  style: TextStyle(fontSize: 50),
                 ),
               ),
-              pinned: true,
-              expandedHeight: context.height * 32,
-              collapsedHeight: context.height * 10,
               centerTitle: true,
-              shape: CircularBorder().appBarRounded(context),
-            ),
-            SliverToBoxAdapter(
-              child: Container(
-                padding: EdgeInsets.all(30),
-                width: context.width * 50,
+              title: Container(
+                decoration: CircularBorder().appBar(context),
+                width: double.infinity,
+                height: double.infinity,
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Container(
-                      child: Text('Email'),
+                    Text('Register'),
+                    Text(
+                      'we are looking foward',
+                      style: TextStyle(fontSize: 10),
                     ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(right: 20, left: 20),
-                      decoration: TextFormDeco().inputFilledContainer(),
-                      child: TextField(
-                        decoration: TextFormDeco().borderlessInput(),
-                        controller: emailController,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      child: Text('Username'),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(right: 20, left: 20),
-                      decoration: TextFormDeco().inputFilledContainer(),
-                      child: TextField(
-                        decoration: TextFormDeco().borderlessInput(),
-                        controller: emailController,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      child: Text('Password'),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(right: 20, left: 20),
-                      decoration: TextFormDeco().inputFilledContainer(),
-                      child: TextField(
-                        decoration: TextFormDeco().borderlessInput(),
-                        controller: passwordController,
-                        obscureText: true,
-                        enableSuggestions: false,
-                        autocorrect: false,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      child: Text('Confirm Password'),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(right: 20, left: 20),
-                      decoration: TextFormDeco().inputFilledContainer(),
-                      child: TextField(
-                        decoration: TextFormDeco().borderlessInput(),
-                        controller: emailController,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    RegisterButton(
-                      emailController: emailController,
-                      passwordController: passwordController,
-                    ),
-                    SizedBox(
-                      height: 7,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('Already have an account?'),
-                        GestureDetector(
-                          onTap: () => {
-                            NavigationService.instance
-                                .navigateToPageClear(path: '/login')
-                          },
-                          child: Text(
-                            'Log in!',
-                            style: TextStyle(color: context.primary),
-                          ),
-                        ),
-                      ],
-                    ),
+                    Text(
+                      'to meet you..',
+                      style: TextStyle(fontSize: 10),
+                    )
                   ],
                 ),
               ),
             ),
-          ],
-        ),
+            pinned: true,
+            expandedHeight: context.height * 32,
+            collapsedHeight: context.height * 10,
+            centerTitle: true,
+            shape: CircularBorder().appBarRounded(context),
+          ),
+          SliverToBoxAdapter(
+            child: Container(
+              padding: EdgeInsets.all(30),
+              width: context.width * 50,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    child: Text('Email'),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(right: 20, left: 20),
+                    decoration: TextFormDeco().inputFilledContainer(),
+                    child: TextField(
+                      decoration: TextFormDeco().borderlessInput(),
+                      controller: emailController,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    child: Text('Username'),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(right: 20, left: 20),
+                    decoration: TextFormDeco().inputFilledContainer(),
+                    child: TextField(
+                      decoration: TextFormDeco().borderlessInput(),
+                      controller: emailController,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    child: Text('Password'),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(right: 20, left: 20),
+                    decoration: TextFormDeco().inputFilledContainer(),
+                    child: TextField(
+                      decoration: TextFormDeco().borderlessInput(),
+                      controller: passwordController,
+                      obscureText: true,
+                      enableSuggestions: false,
+                      autocorrect: false,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    child: Text('Confirm Password'),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(right: 20, left: 20),
+                    decoration: TextFormDeco().inputFilledContainer(),
+                    child: TextField(
+                      decoration: TextFormDeco().borderlessInput(),
+                      controller: emailController,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  RegisterButton(
+                    emailController: emailController,
+                    passwordController: passwordController,
+                  ),
+                  SizedBox(
+                    height: 7,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Already have an account?'),
+                      GestureDetector(
+                        onTap: () => {
+                          NavigationService.instance
+                              .navigateToPageClear(path: '/login')
+                        },
+                        child: Text(
+                          'Log in!',
+                          style: TextStyle(color: context.primary),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
