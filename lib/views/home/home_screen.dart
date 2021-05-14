@@ -1,3 +1,4 @@
+import 'package:activityTracer/views/challenges/challenges_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/core_shelf.dart';
@@ -23,11 +24,11 @@ class _HomeScreenState extends State<HomeScreen> {
         items: <Widget>[
           getIcon(pageIndex == 0 ? Icons.home : Icons.home_outlined, 0),
           getIcon(
-            pageIndex == 1 ? Icons.notifications : Icons.notifications_outlined,
+            pageIndex == 1 ? Icons.leaderboard : Icons.leaderboard_outlined,
             1,
           ),
           getIcon(
-              pageIndex == 2 ? Icons.leaderboard : Icons.leaderboard_outlined,
+              pageIndex == 2 ? Icons.emoji_events : Icons.emoji_events_outlined,
               2),
           getIcon(pageIndex == 3 ? Icons.person : Icons.person_outline, 3),
         ],
@@ -59,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
       );
     } else {
       return Center(
-        child: Text('test2'),
+        child: ChallengesScreen(),
       );
     }
   }
