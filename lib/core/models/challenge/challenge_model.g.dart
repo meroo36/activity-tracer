@@ -8,11 +8,12 @@ part of 'challenge_model.dart';
 
 ChallengeModel _$ChallengeModelFromJson(Map<String, dynamic> json) {
   return ChallengeModel(
-    json['id'] as String?,
-    json['name'] as String,
-    json['image'] as String,
-    json['target'] as int,
-  )..error = json['error'] as String?;
+      json['id'] as String?,
+      json['name'] as String,
+      json['image'] as String,
+      json['target'] as int,
+      json['expireDate'] as dynamic)
+    ..error = json['error'] as String?;
 }
 
 Map<String, dynamic> _$ChallengeModelToJson(ChallengeModel instance) =>
@@ -21,5 +22,6 @@ Map<String, dynamic> _$ChallengeModelToJson(ChallengeModel instance) =>
       'name': instance.name,
       'image': instance.image,
       'target': instance.target,
+      'expireDate': instance.expireDate,
       'error': instance.error,
     };

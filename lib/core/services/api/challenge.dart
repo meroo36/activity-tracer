@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../core_shelf.dart';
 
 class ChallengeApi {
-  final String _endpoint = 'http://192.168.1.27:3000/api/challenges';
+  final String _endpoint = '$baseUrl/challenges';
 
   Future<ChallengesModel> get() async {
     try {

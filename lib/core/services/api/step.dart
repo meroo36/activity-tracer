@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../core_shelf.dart';
 
 class StepApi {
-  final String _endpoint = 'http://192.168.1.33:3000/api/step';
+  final String _endpoint = '$baseUrl/step';
 
   Future send(int stepCount, String date) async {
     try {

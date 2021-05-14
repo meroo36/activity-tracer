@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import '../../core_shelf.dart';
 
 class UserApiService {
-  final String _endpoint = 'http://192.168.1.33:3000/api/user';
+  final String _endpoint = '$baseUrl/user';
 
   Future login(String email, String password) async {
     try {
