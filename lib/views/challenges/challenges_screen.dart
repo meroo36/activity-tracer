@@ -23,6 +23,10 @@ class ChallengesScreen extends StatelessWidget {
                     return ListView.builder(
                       itemCount: snapshot.data!.challenges!.length,
                       itemBuilder: (context, cnt) {
+                        final expireDate = DateTime.parse(
+                            snapshot.data!.challenges![cnt].expireDate);
+                        final now = DateTime.now();
+                        final difference = expireDate.difference(now).inDays;
                         return Stack(
                           children: [
                             CachedNetworkImage(
@@ -50,6 +54,7 @@ class ChallengesScreen extends StatelessWidget {
                                 vertical: context.width * 4,
                                 horizontal: context.width * 4,
                               ),
+                              padding: context.mediumPadding,
                               decoration: BoxDecoration(
                                 gradient: LinearGradient(
                                   begin: Alignment.topCenter,
@@ -64,6 +69,49 @@ class ChallengesScreen extends StatelessWidget {
                               ),
                               height: context.height * 30,
                               width: double.infinity,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    snapshot.data!.challenges![cnt].name,
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 20),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
+                                    children: [
+                                      Text(
+                                        'Goal: ${snapshot.data!.challenges![cnt].target}',
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 15),
+                                      ),
+                                      Text(
+                                        '$difference days left',
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 15),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Align(
+                              alignment: Alignment.topRight,
+                              child: TextButton(
+                                onPressed: null,
+                                child: Container(
+                                  decoration:
+                                      CircularBorder().inputBorder(context),
+                                  margin: EdgeInsets.fromLTRB(
+                                      context.height * 10,
+                                      context.width * 5,
+                                      context.height * 5,
+                                      context.width * 10),
+                                  height: context.height * 3,
+                                  width: context.width * 20,
+                                ),
+                              ),
                             ),
                           ],
                         );
