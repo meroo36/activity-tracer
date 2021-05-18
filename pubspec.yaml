@@ -30,6 +30,7 @@ dependencies:
     flutter_swiper: ^1.1.6
     url_launcher: ^6.0.3
     gender_picker: ^1.1.0
+    carousel_slider: ^3.0.0
     
 dev_dependencies:
     flutter_test:
@@ -44,3 +45,4 @@ flutter:
         - assets/logo/
         - assets/jsonData/
         - assets/tipsandtricks/
+        - assets/homepictures/

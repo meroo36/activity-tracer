@@ -19,19 +19,42 @@ class TipsTricksScrollWidget extends StatelessWidget {
   }
 }
 
-ClipRRect calculateImg(context) {
-  return ClipRRect(
-    borderRadius: BorderRadius.circular(36),
-    child: ListView.builder(
-      itemCount: 2,
-      scrollDirection: Axis.horizontal,
-      shrinkWrap: true,
-      itemBuilder: (BuildContext context, int index) {
-        return Image.asset(
-          'assets/logo/calculate.jpg',
-          fit: BoxFit.fitHeight,
-        );
-      },
+Stack calculateImg(context) {
+  return Stack(children: [
+    Center(
+      child: Container(
+        height: 75,
+        width: 220,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(36),
+                child: Image.asset(
+            'assets/homepictures/4.jpg',
+            fit: BoxFit.fitWidth,
+          ),
+        ),
+      ),
     ),
-  );
+    Center(
+      child: Container(
+          // ignore: sort_child_properties_last
+          child: Center(
+            child: Text(
+              'Tips&Tricks',
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          ),
+          height: 75,
+          width: 220,
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.transparent,
+                  Colors.black,
+                ],
+              ),
+              borderRadius: BorderRadius.circular(36))),
+    ),
+  ]);
 }

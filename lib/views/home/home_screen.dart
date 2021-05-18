@@ -17,6 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       bottomNavigationBar: CurvedNavigationBar(
         color: Colors.white.withOpacity(.96),
         buttonBackgroundColor: Colors.white.withOpacity(.92),

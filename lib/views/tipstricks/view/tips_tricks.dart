@@ -17,7 +17,7 @@ class _TipsScreenState extends State<TipsScreen> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Tips And Tricks'),
+        title: Text('Tips&Tricks'),
         shape: CircularBorder().appBarRounded(context),
       ),
       body: Container(
