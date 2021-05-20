@@ -1,4 +1,6 @@
 import 'package:activityTracer/views/challenges/challenges_screen.dart';
+import 'package:activityTracer/views/home/drawer.dart';
+import 'package:activityTracer/views/leaderboard/leaderboard_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/core_shelf.dart';
@@ -19,8 +21,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       bottomNavigationBar: CurvedNavigationBar(
-        color: Colors.white.withOpacity(.96),
-        buttonBackgroundColor: Colors.white.withOpacity(.92),
+        color: Color(0xff404040),
+        buttonBackgroundColor: Color(0xff404040),
         height: context.height * 7.8,
         items: <Widget>[
           getIcon(pageIndex == 0 ? Icons.home : Icons.home_outlined, 0),
@@ -36,6 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
         onTap: changeIndex,
       ),
       body: getBody(),
+      drawer: DrawerMenu(),
     );
   }
 
@@ -43,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Icon(
       icon,
       size: pageIndex == index ? context.width * 8.2 : context.width * 7.9,
-      color: pageIndex == index ? context.primary : Colors.black54,
+      color: pageIndex == index ? context.primary : Colors.white,
     );
   }
 
@@ -53,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
       return HomeEntryBody();
     } else if (pageIndex == 1) {
       return Center(
-        child: Text('test'),
+        child: LeaderBoardScreen(),
       );
     } else if (pageIndex == 3) {
       return Center(

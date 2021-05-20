@@ -44,7 +44,7 @@ Stack calculateImg(context) {
             ),
           ),
           height: 75,
-          width: 220,
+          width: double.infinity,
           decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,

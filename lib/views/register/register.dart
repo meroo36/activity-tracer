@@ -28,12 +28,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
             backgroundColor: context.primary,
             flexibleSpace: FlexibleSpaceBar(
               collapseMode: CollapseMode.pin,
-              background: Center(
-                child: Text(
-                  'LOGO',
-                  style: TextStyle(fontSize: 50),
-                ),
-              ),
               centerTitle: true,
               title: Container(
                 decoration: CircularBorder().appBar(context),
@@ -43,6 +37,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+                    Expanded(
+                      child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Image.asset(
+                          'assets/logo/logo1.png',
+                          alignment: Alignment.bottomCenter,
+                          height: context.height * 15,
+                        ),
+                      ),
+                    ),
                     Text('Register'),
                     Text(
                       'we are looking foward',

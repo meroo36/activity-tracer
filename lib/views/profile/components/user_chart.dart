@@ -38,8 +38,16 @@ class _UserChartState extends State<UserChart> {
               },
             ),
           ),
+          gridData: FlGridData(
+            show: true,
+            drawVerticalLine: true,
+            drawHorizontalLine: false,
+          ),
           lineBarsData: [
             LineChartBarData(
+              preventCurveOverShooting: true,
+              belowBarData: BarAreaData(
+                  colors: [Colors.red.withOpacity(0.6)], show: true),
               isCurved: true,
               barWidth: 2,
               spots: [

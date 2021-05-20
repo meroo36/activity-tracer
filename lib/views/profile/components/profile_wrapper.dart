@@ -55,37 +55,54 @@ class ProfileWrapper extends StatelessWidget {
                     Container(
                       height: context.height * 20,
                       width: double.infinity,
-                      child: ListView(
-                        scrollDirection: Axis.horizontal,
+                      child: ListView.builder(
                         physics: BouncingScrollPhysics(),
-                        children: [
-                          Container(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 4,
+                        itemBuilder: (context, index) {
+                          return Container(
                             margin: context.lowPadding,
                             width: context.height * 20,
                             decoration: CircularBorder().inputBorder(context),
-                          ),
-                          Container(
-                            margin: context.lowPadding,
-                            width: context.height * 20,
-                            decoration: CircularBorder().inputBorder(context),
-                          ),
-                          Container(
-                            margin: context.lowPadding,
-                            width: context.height * 20,
-                            decoration: CircularBorder().inputBorder(context),
-                          ),
-                          Container(
-                            margin: context.lowPadding,
-                            width: context.height * 20,
-                            decoration: CircularBorder().inputBorder(context),
-                          ),
-                          Container(
-                            margin: context.lowPadding,
-                            width: context.height * 20,
-                            decoration: CircularBorder().inputBorder(context),
-                          ),
-                        ],
+                            child: Icon(
+                              Icons.lock,
+                              size: 100,
+                            ),
+                          );
+                        },
                       ),
+                      // child: ListView(
+                      //   scrollDirection: Axis.horizontal,
+                      //   physics: BouncingScrollPhysics(),
+                      //   children: [
+                      //     Container(
+                      //       margin: context.lowPadding,
+                      //       width: context.height * 20,
+                      //       decoration: CircularBorder().inputBorder(context),
+                      //     ),
+                      //     Container(
+                      //       margin: context.lowPadding,
+                      //       width: context.height * 20,
+                      //       decoration: CircularBorder().inputBorder(context),
+                      //     ),
+                      //     Container(
+                      //       margin: context.lowPadding,
+                      //       width: context.height * 20,
+                      //       decoration: CircularBorder().inputBorder(context),
+                      //       child: ,
+                      //     ),
+                      //     Container(
+                      //       margin: context.lowPadding,
+                      //       width: context.height * 20,
+                      //       decoration: CircularBorder().inputBorder(context),
+                      //     ),
+                      //     Container(
+                      //       margin: context.lowPadding,
+                      //       width: context.height * 20,
+                      //       decoration: CircularBorder().inputBorder(context),
+                      //     ),
+                      //   ],
+                      // ),
                     ),
                   ],
                 ),

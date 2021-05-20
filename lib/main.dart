@@ -51,7 +51,7 @@ void main() async {
         ...?ApplicationProvider.instance?.uiChangesItems
       ],
       child: DevicePreview(
-        enabled: true,
+        enabled: false,
         builder: (context) => MyApp(token),
       ),
     ),

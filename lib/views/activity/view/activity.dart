@@ -119,7 +119,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
                       },
                       equallyAligned: true,
                       animationDuration: Duration(milliseconds: 300),
-                      isCircular: true,
+                      isCircular: false,
                       // default : true,
                       opacityOfGradient: 0.4,
                       padding: const EdgeInsets.all(3),

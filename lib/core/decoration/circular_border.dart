@@ -41,7 +41,8 @@ class CircularBorder {
         image: NetworkImage(imageUrl),
       ),
       shape: BoxShape.circle,
-      border: Border.all(width: 2, color: Colors.black, style: BorderStyle.solid),
+      border:
+          Border.all(width: 2, color: Colors.black, style: BorderStyle.solid),
     );
   }
 }

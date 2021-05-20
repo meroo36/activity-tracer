@@ -4,7 +4,6 @@ import '../../core/core_shelf.dart';
 import '../../core/decoration/circular_border.dart';
 import 'components/login_button.dart';
 
-
 class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -28,12 +27,6 @@ class _LoginScreenState extends State<LoginScreen> {
               backgroundColor: context.primary,
               flexibleSpace: FlexibleSpaceBar(
                 collapseMode: CollapseMode.pin,
-                background: Center(
-                  child: Text(
-                    'LOGO',
-                    style: TextStyle(fontSize: 50),
-                  ),
-                ),
                 centerTitle: true,
                 title: Container(
                   decoration: CircularBorder().appBar(context),
@@ -43,6 +36,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
+                      Expanded(
+                        child: Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Image.asset(
+                            'assets/logo/logo1.png',
+                            alignment: Alignment.bottomCenter,
+                            height: context.height * 20,
+                          ),
+                        ),
+                      ),
                       Text('Welcome!'),
                       Text(
                         'we have been waiting for you.',
@@ -115,8 +118,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       children: [
                         Text('Don\'t have an account?'),
                         GestureDetector(
-                          onTap: () =>
-                          {NavigationService.instance.navigateToPageClear(path: '/register')},
+                          onTap: () => {
+                            NavigationService.instance
+                                .navigateToPageClear(path: '/register')
+                          },
                           child: Text(
                             'Lets sign-up!',
                             style: TextStyle(color: context.primary),
