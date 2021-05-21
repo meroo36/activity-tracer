@@ -107,6 +107,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
                     child: GenderPickerWithImage(
                       showOtherGender: true,
                       verticalAlignedText: false,
+
                       selectedGender: Gender.Male,
                       selectedGenderTextStyle: TextStyle(
                           color: Color(0xFF8b32a8),
@@ -119,7 +120,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
                       },
                       equallyAligned: true,
                       animationDuration: Duration(milliseconds: 300),
-                      isCircular: false,
+                      isCircular: true,
                       // default : true,
                       opacityOfGradient: 0.4,
                       padding: const EdgeInsets.all(3),

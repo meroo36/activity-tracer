@@ -67,11 +67,11 @@ class LeaderBoardScreen extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('@meroo36'),
+                          Text('@meroo366'),
                           SizedBox(
                             height: 20,
                           ),
-                          Text('10.254'),
+                          Text('13.254'),
                           Text('Steps'),
                         ],
                       ),
@@ -115,11 +115,11 @@ class LeaderBoardScreen extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('@meroo36'),
+                          Text('@meroo376'),
                           SizedBox(
                             height: 20,
                           ),
-                          Text('10.254'),
+                          Text('15.254'),
                           Text('Steps'),
                         ],
                       ),
@@ -163,11 +163,11 @@ class LeaderBoardScreen extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('@meroo36'),
+                          Text('@meroo326'),
                           SizedBox(
                             height: 20,
                           ),
-                          Text('10.254'),
+                          Text('11.254'),
                           Text('Steps'),
                         ],
                       ),
@@ -220,7 +220,7 @@ class LeaderBoardScreen extends StatelessWidget {
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      'meroo$index',
+                      'meroo${index + 3}',
                       textAlign: TextAlign.center,
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
